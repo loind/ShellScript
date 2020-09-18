@@ -1,6 +1,6 @@
 #!/bin/bash
 
-list_host=($(grep -e "^Host\s" ~/.ssh/config | awk '{print $2}'))
+list_host=($(grep -ie "^Host\s" ~/.ssh/config | awk '{print $2}'))
 input_index=$1
 i=0
 for host in ${list_host[@]}; do
