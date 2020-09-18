@@ -12,4 +12,4 @@ Create new ssh key.
 Use: puttygen
 
 ## ssh.sh
-Listing remote server by reading config in ~/.ssh/config
+Listing remote server by scan in ~/.ssh/config
