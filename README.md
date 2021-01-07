@@ -13,3 +13,6 @@ Use: puttygen
 
 ## ssh.sh
 Listing remote server by scan in ~/.ssh/config
+
+## download_image_from_registry.sh
+Download image from docker registry and save to file with extension .tar.gz
