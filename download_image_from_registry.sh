@@ -4,7 +4,10 @@
 ARR_LIST_IMAGES=(  )
 add_image_to_list()
 {
-    ARR_LIST_IMAGES[${#ARR_LIST_IMAGES[@]}]=$1
+    for image in "$@"
+    do
+        ARR_LIST_IMAGES[${#ARR_LIST_IMAGES[@]}]=$image
+    done
 }
 
 read -p "Input image to download: " IMAGE
