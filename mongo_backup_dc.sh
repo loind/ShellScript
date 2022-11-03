@@ -8,11 +8,11 @@ PORT=''
 USERNAME=''
 PASSWORD=''
 
-# keep minimum 2 days
-for k in $(seq 2 10); do 
-    old_file=mongo_$(date --date="$k days ago" "+%Y%m%d").gz
-    rm -rf $old_file
-done
+# keep minimum 3 backup version
+num_backup=`ls $BACKUP_DIR | wc -l`
+if [[ $num_backup -gt 3 ]]; then
+    ls $BACKUP_DIR | sort | head -n $(($num_backup-3)) | awk '{system("rm -rf $BACKUP_DIR/" $1)}'
+fi
 
 # run dump data
 file_name=mongo_$(date '+%Y%m%d').gz
